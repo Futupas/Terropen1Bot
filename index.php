@@ -4,8 +4,10 @@
 
     file_put_contents('logs.txt', 'request'.date("Y-m-d H:i:s")."\n", FILE_APPEND);
     file_put_contents('logs.txt', print_r($_SERVER, true), FILE_APPEND);
+    file_put_contents('logs.txt', "\n", FILE_APPEND);
     file_put_contents('logs.txt', print_r($_POST, true), FILE_APPEND);
     file_put_contents('logs.txt', "\n", FILE_APPEND);
+    file_put_contents('logs.txt', file_get_contents('php://input'), FILE_APPEND);
     file_put_contents('logs.txt', "\n\n", FILE_APPEND);
     
     // $my_file = 'logs.txt';
