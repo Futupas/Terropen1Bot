@@ -22,9 +22,10 @@
 
         file_put_contents('logs.txt', date("Y-m-d H:i:s")."   ".$requestString."\n\n", FILE_APPEND);
 
-        $r = new HttpRequest('https://api.telegram.org/bot667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8/sendMessage?chat_id='.$msg_chatid.'&text=bot says '.$msg, 
-            HttpRequest::METH_GET);
-        $r->send();
+        // $r = new HttpRequest('https://api.telegram.org/bot667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8/sendMessage?chat_id='.$msg_chatid.'&text=bot says '.$msg, 
+        //     HttpRequest::METH_GET);
+        // $r->send();
+        $response = file_get_contents('https://api.telegram.org/bot667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8/sendMessage?chat_id='.$msg_chatid.'&text=you said '.$msg);
 
     } else {
         echo("This is Terropen 1 Bot");
