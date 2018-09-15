@@ -23,7 +23,7 @@
     define('BOT_TOKEN', '667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8');
     define('BOT_WEBHOOK', 'https://terropen1bot.herokuapp.com/index.php');
 
-    $bot = new PollBot(BOT_TOKEN, 'Terropen1Bot');
+    $bot = new PollBot(BOT_TOKEN, 'PollBotChat');
 
     if (php_sapi_name() == 'cli') {
     if ($argv[1] == 'set') {
