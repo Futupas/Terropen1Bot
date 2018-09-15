@@ -15,7 +15,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $requestString = file_get_contents('php://input');
         $requestData = json_decode($requestString);
-        $msg_chatid = $requestData['message']['chat']['id'];
+        $msg_chatid = $requestData->message->chat->id;
         $msg_sendername = $requestData['message']['from']['first_name'];
         $msg = $requestData['message']['text'];
 
