@@ -1,6 +1,7 @@
 <?php
     // 667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8
     // https://terropen1bot.herokuapp.com/index.php
+    // https://terropen1bot.herokuapp.com/logs.txt
 
     file_put_contents('logs.txt', 'request'.date("Y-m-d H:i:s")."\n", FILE_APPEND);
     file_put_contents('logs.txt', print_r($_SERVER, true), FILE_APPEND);
