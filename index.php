@@ -15,14 +15,14 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $requestString = file_get_contents('php://input');
         $requestData = json_decode($requestString);
-        
+
         $msg_chatid = $requestData->message->chat->id;
         $msg_sendername = $requestData->message->from->first_name;
         $msg = $requestData->message->text;
 
         file_put_contents('logs.txt', date("Y-m-d H:i:s")."   ".$requestString."\n\n", FILE_APPEND);
 
-        $r = new HttpRequest('https://api.telegram.com/bot667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8/sendMessage?chat_id='.$msg_chatid.'&text=bot says '.$msg, 
+        $r = new HttpRequest('https://api.telegram.org/bot667595130:AAHPTQeVVZr4UJISZV-Zw2-9jurxJXL7-a8/sendMessage?chat_id='.$msg_chatid.'&text=bot says '.$msg, 
             HttpRequest::METH_POST);
         $r->send();
 
