@@ -15,9 +15,10 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $requestString = file_get_contents('php://input');
         $requestData = json_decode($requestString);
+        
         $msg_chatid = $requestData->message->chat->id;
-        $msg_sendername = $requestData['message']['from']['first_name'];
-        $msg = $requestData['message']['text'];
+        $msg_sendername = $requestData->message->from->first_name;
+        $msg = $requestData->message->text;
 
         file_put_contents('logs.txt', date("Y-m-d H:i:s")."   ".$requestString."\n\n", FILE_APPEND);
 
