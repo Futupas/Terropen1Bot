@@ -5,9 +5,7 @@
     // https://terropen1bot.herokuapp.com/index.php
 
     file_put_contents('logs.txt', 'request'.date("Y-m-d H:i:s")."\n", FILE_APPEND);
-    file_put_contents('logs.txt', json_encode($_GET), FILE_APPEND);
-    file_put_contents('logs.txt', "\n", FILE_APPEND);
-    file_put_contents('logs.txt', json_encode($_POST), FILE_APPEND);
+    file_put_contents('logs.txt', print_r($_REQUEST, true), FILE_APPEND);
     file_put_contents('logs.txt', "\n\n", FILE_APPEND);
     
     // $my_file = 'logs.txt';
